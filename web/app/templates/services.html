@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Transcriptor</title>
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/googleapis.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Dashboard-layout.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/dh-row-text-image-right-responsive.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Drag-and-Drop-Multiple-File-Form-Input-upload-Advanced.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Drag-Drop-File-Input-Upload.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Footer-Dark.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Header-Dark.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Service-Box-Style-01.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/styles.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Team-Clean.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/User-Information-Panel---Lite--Secondary-User-Panel-Footer.css">
+</head>
+
+<body>
+    <div>
+        <div class="header-dark" style="background-image: url(https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/img/mountain_bg.jpg)";>
+            <nav class="navbar navbar-dark navbar-expand-lg navigation-clean-search" style="font-family: Bitter, serif;">
+                <div class="container"><a class="navbar-brand" href="{{ url_for('index') }}" style="font-family: Bitter, serif;"><i class="fas fa-assistive-listening-systems" style="color: #f4476b;font-size: 25px;"></i> Transcriptor</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div
+                        class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="{{ url_for('aboutUs') }}" style="font-family: Bitter, serif;">About Us</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="{{ url_for('services') }}" style="font-family: Bitter, serif;">Services</a></li>
+                        </ul>
+                        <form class="form-inline mr-auto" target="_self">
+                            <div class="form-group"></div>
+                        </form><span class="navbar-text"></span><span class="navbar-text"><a class="login" href="{{ url_for('login') }}" style="font-family: Bitter, serif;">Log In</a></span>
+                        <a class="btn btn-light action-button" role="button" href="{{ url_for('registernewt') }}" style="background-color: rgb(103,108,108);font-family: Bitter, serif;">Sign Up</a></div>
+                </div>
+            </nav>
+        <form style="font-size: 4px;height: 10px;"></form>
+        <div class="container flex-wrap">
+            <h1 class="text-center" style="color: rgb(255,255,255);font-family: Bitter, serif;" style="font-family: Bitter, serif;">Check out our different services levels</h1>
+            <form style="font-size: 4px;height: 10px;"></form>
+            <div class="row clearmargin clearpadding row-image-txt" style="font-family: Bitter, serif;background-color: rgba(42,42,42,0.39);">
+                <div class="flex-grow-1 flex-shrink-1 flex-fill flex-wrap col-xs-12 col-sm-6 col-md-6 clearmargin clearpadding col-sm-push-6" style="background-image: url(https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/img/office-front.jpeg);background-size: cover;height: 400px;background-position: center;max-width: 35%;">
+                    <div></div>
+                </div>
+                <div class="text-xl-left flex-grow-1 col-xs-12 col-sm-6 col-md-6 col-sm-pull-6" style="padding: 20px;max-width: 65%;width: 622px;">
+                    <h1 style="font-family: Bitter, serif;">free trail</h1>
+                    <hr style="color: rgb(255,255,255);background-color: #fcfcfc;">
+                    <p class="text-left" style="font-family: Bitter, serif;">The entrance gate to the world of Transcriptor. Become a member and enjoy up to a total length of 60 seconds per month. Do you wanna know how much you have to pay for? Here it comes:
+                        it is for free!</p>
+                    <div style="text-align:center"><a class="btn btn-light btn-lg" role="button" href="{{ url_for('register') }}" style="font-family: 'Bitter', serif" >start for free</a></div>
+                </div>
+            </div>
+            <form style="font-size: 4px;height: 10px;"></form>
+            <div class="d-xl-flex justify-content-xl-end row clearmargin clearpadding row-image-txt" style="font-family: Bitter, serif;background-color: rgba(42,42,42,0.39);">
+                <div class="flex-grow-1 flex-shrink-1 col-xs-12 col-sm-6 col-md-6 col-sm-pull-6" style="padding: 20px;max-width: 86%;">
+                    <h1 style="font-family: Bitter, serif;">Private</h1>
+                    <hr style="background-color: white;">
+                    <p style="font-family: Bitter, serif;">You are a private-member you want more adventure? If you go beyond your free limit you become automatically an advanced member. See below the different levels</p>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th style="color: rgb(255,255,255);font-size: 22px">Pro-Level</th>
+                            <th style="color: rgb(255,255,255);font-size: 22px">Ultimate-Level</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <th style="color: rgb(255,255,255);"><ul><li>up to 10 min</li><br><li>unlimited transcriptions</li><br><li>12 ct per minute</li></ul></th>
+                            <th style="color: rgb(255,255,255);"><ul><li>unlimited min </li><br> <li>unlimited transcriptions </li><br><li>09 ct per minute</li></ul></th>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="d-xl-flex flex-shrink-1 justify-content-xl-end col-xs-12 col-sm-6 col-md-6 clearmargin clearpadding col-sm-push-6" style="background-image: url(https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/img/office-front.jpeg);background-size: cover;height: 400px;background-position: center;max-width: 35%;">
+                    <div></div>
+                </div>
+            </div>
+            <form style="font-size: 4px;height: 10px;"></form>
+            <div class="row clearmargin clearpadding row-image-txt" style="font-family: Bitter, serif;background-color: rgba(42,42,42,0.39);">
+                <div class="flex-grow-1 flex-shrink-1 flex-fill flex-wrap col-xs-12 col-sm-6 col-md-6 clearmargin clearpadding col-sm-push-6" style="background-image: url(https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/img/meeting.jpg);background-size: cover;height: 400px;background-position: center;max-width: 35%;">
+                    <div></div>
+                </div>
+                <div class="text-xl-left flex-grow-1 col-xs-12 col-sm-6 col-md-6 col-sm-pull-6" style="padding: 20px;max-width: 65%;width: 622px;background-color: rgba(42,42,42,0.39);">
+                    <h1 style="font-family: Bitter, serif;">Business</h1>
+                    <hr style="background-color: white;">
+                    <p class="text-left" style="font-family: Bitter, serif;">You are an organization and you are looking for a powerful transcription tool? Become a business member and get extra benefits </p>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th style="color: rgb(255,255,255);font-size: 22px"><b>Pro-Level</b></th>
+                            <th style="color: rgb(255,255,255);font-size: 22px"><b>Ultimate-Level</b></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <th style="color: rgb(255,255,255);"><ul><li>up to 500 min</li><br><li>unlimited transcriptions</li><br><li>11 ct per minute</li></ul></th>
+                            <th style="color: rgb(255,255,255);"><ul><li>unlimited min </li><br> <li>unlimited transcriptions </li><br><li>09 ct per minute</li></ul></th>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer-dark" style="font-family: Bitter, serif;">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3 style="font-family: Bitter, serif;">Services</h3>
+                        <ul style="font-family: Bitter, serif;">
+                            <li><a href="{{ url_for('services') }}"style="font-family: Bitter, serif;">Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3 style="font-family: Bitter, serif;">About</h3>
+                        <ul style="font-family: Bitter, serif;">
+                            <li><a href="{{ url_for('aboutUs') }}"  style="font-family: Bitter, serif;">Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3 style="font-family: Bitter, serif;">Transcriptor&nbsp;</h3>
+                        <p style="font-family: Bitter, serif;">How a student would transcribe</p>
+                    </div>
+                </div>
+                <p class="copyright" style="font-family: Bitter, serif;"><i class="fas fa-assistive-listening-systems" style="color: #f4476b;font-size: 25px;"></i> Transcriptor © 2020</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/js/jquery.min.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/js/Bootstrap-4---Payment-Form.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/js/Drag-and-Drop-Multiple-File-Form-Input-upload-Advanced.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Transcriptor</title>
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/googleapis.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Dashboard-layout.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/dh-row-text-image-right-responsive.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Drag-and-Drop-Multiple-File-Form-Input-upload-Advanced.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Drag-Drop-File-Input-Upload.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Footer-Dark.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Header-Dark.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Service-Box-Style-01.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/styles.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Team-Clean.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/User-Information-Panel---Lite--Secondary-User-Panel-Footer.css">
+</head>
+
+<body style=" height: 1000px;">
+    <div>
+        <div class="header-dark" style="background-image: url(https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/img/mountain_bg.jpg)";>
+            <nav class="navbar navbar-dark navbar-expand-lg navigation-clean-search" style="font-family: Bitter, serif;">
+                <div class="container"><a class="navbar-brand" href="{{ url_for('welcome') }}" style="font-family: Bitter, serif;"><i class="fas fa-assistive-listening-systems" style="color: #f4476b;font-size: 25px;"></i> Transcriptor</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="{{ url_for('aboutusloggedin') }}" style="font-family: Bitter, serif;">About Us</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="{{ url_for('serviceloggedin') }}" style="font-family: Bitter, serif;">Services</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" onclick="ToDashboard()" style="font-family: Bitter, serif;">Dashboard</a></li>
+                        </ul>
+                        <form class="form-inline mr-auto" target="_self">
+                        <div class="form-group"></div>
+                        </form><span class="navbar-text"></span><span class="navbar-text"><a style="font-family: Bitter, serif;">Hello&nbsp;</a><span id="username"> </span><button class="btn btn-light action-button" type="submit" style="background-color: rgb(244,71,107);font-family: Bitter, serif;" onclick="signOut()">Logout</button></div>
+        </div>
+        </nav>
+        <div class="container hero" style="font-family: Bitter, serif;background-color: rgba(42,42,42,0.39);">
+            <div class="jumbotron" style="background-color: transparent;">
+                <h1 class="text-center" style="font-family: Bitter, serif;">Some words about us&nbsp;</h1>
+                <p class="text-center" style="font-family: Bitter, serif;">We are a group of three stutdents from the Universitiy of Applied Science of Constanz - all of of are currently studying&nbsp;<br>Business Information Technology (M.Sc.)&nbsp;<br>This Web Application was developt within the scope od the
+                    Masters lecture&nbsp;<br>Cloud Application Development&nbsp;</p>
+                <p style="text-align:center"><a class="btn btn-light btn-lg" role="button" href="{{ url_for('serviceloggedin') }}" style="background-color: rgb(255,255,255); font-family: Bitter,  serif; color: rgb(33,37,41) " >Learn more</a></p>
+            </div>
+        </div>
+        <div class="container" style="background-color: rgba(42,42,42,0.39);font-family: Bitter, serif;">
+            <div class="intro">
+                <form style="height: 48px;background-color: rgba(255,255,255,0);"></form>
+                <h2 class="text-center" style="font-size: 32px;color: rgb(255,255,255);" style="font-family: Bitter, serif;">Faces behind Transcriptor</h2>
+                <p class="text-center"></p>
+            </div>
+            <div class="row people">
+                <div class="col-md-6 col-lg-4 text-center item"><img class="rounded-circle" src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/img/89234239123.jpg" style="width: 154px;height: 204px;">
+                    <form style="height: 10px;background-color: rgba(255,255,255,0);"></form>
+                    <h3 class="name" style="color: rgb(255,255,255);" style="font-family: Bitter, serif;">Leon<br>Sick</h3>
+                    <p class="title" style="font-family: Bitter, serif;">BIT-Student</p>
+                    <p class="description" style="font-family: Bitter, serif;">Leon is our backend and python brain and of course a business angel. </p>
+                </div>
+                <div class="col-md-6 col-lg-4 text-center item"><img class="rounded-circle" style="width: 154px;height: 204px;" src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/img/7bc36c2e.jpg">
+                    <form style="height: 10px;background-color: rgba(255,255,255,0);" style="font-family: Bitter, serif;"></form>
+                    <h3 class="name" style="color: rgb(255,255,255);" style="font-family: Bitter, serif;">Marius <br>Zimmermann<br></h3>
+                    <p class="title" style="font-family: Bitter, serif;">BIT-Student</p>
+                    <p class="description" style="font-family: Bitter, serif;">Marius is one of our business angels and a AWS guru.  </p>
+                </div>
+                <div class="col-md-6 col-lg-4 text-center item"><img class="rounded-circle" src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/img/_DSC5642bearb.jpg" style="width: 154px;height: 204px;">
+                    <form style="height: 10px;background-color: rgba(255,255,255,0); font-family: Bitter, serif;"></form>
+                    <h3 class="name" style="color: rgb(255,255,255);" style="font-family: Bitter, serif;">Christoph <br>Baschnagel</h3>
+                    <p class="title" style="font-family: Bitter, serif;">BIT-Student</p>
+                    <p class="description" style="font-family: Bitter, serif;">Christoph is also an business angel and kind of HTML addicted.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer-dark" style="font-family: Bitter, serif;">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3 style="font-family: Bitter, serif;">Services</h3>
+                        <ul style="font-family: Bitter, serif;">
+                            <li><a href="{{ url_for('serviceloggedin') }}"style="font-family: Bitter, serif;">Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3 style="font-family: Bitter, serif;">About</h3>
+                        <ul style="font-family: Bitter, serif;">
+                            <li><a href="{{ url_for('aboutusloggedin') }}"  style="font-family: Bitter, serif;">Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3 style="font-family: Bitter, serif;">Transcriptor&nbsp;</h3>
+                        <p style="font-family: Bitter, serif;">How a student would transcribe</p>
+                    </div>
+                </div>
+                <p class="copyright" style="font-family: Bitter, serif;"><i class="fas fa-assistive-listening-systems" style="color: #f4476b;font-size: 25px;"></i> Transcriptor © 2020</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/js/jquery.min.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/js/Bootstrap-4---Payment-Form.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/js/Drag-and-Drop-Multiple-File-Form-Input-upload-Advanced.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/aws-cognito-sdk.min.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/amazon-cognito-identity.min.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/app.js"></script>
+    <script>
+            $(window).ready(dashboard);
+    </script>
+</body>
+
+</html>

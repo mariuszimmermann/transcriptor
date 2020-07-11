@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html style="font-family: Bitter, serif;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Transcriptor</title>
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/googleapis.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Dashboard-layout.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/dh-row-text-image-right-responsive.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Drag-and-Drop-Multiple-File-Form-Input-upload-Advanced.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Drag-Drop-File-Input-Upload.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Footer-Dark.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Header-Dark.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Service-Box-Style-01.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/styles.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Team-Clean.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/User-Information-Panel---Lite--Secondary-User-Panel-Footer.css">
+</head>
+
+<body>
+    <div>
+        <div class="header-dark" style="background-image: url(https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/img/mountain_bg.jpg)";>
+            <nav class="navbar navbar-dark navbar-expand-lg navigation-clean-search" style="font-family: Bitter, serif;">
+                <div class="container"><a class="navbar-brand" href="/welcome" style="font-family: Bitter, serif;"><i class="fas fa-assistive-listening-systems" style="color: #f4476b;font-size: 25px;"></i> Transcriptor</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav">
+                        </ul>
+                        <form class="form-inline mr-auto" target="_self">
+                        <div class="form-group"></div>
+                        </form><span class="navbar-text"></span><span class="navbar-text"><a style="font-family: Bitter, serif;">Hello&nbsp;</a><span id="username"></span><button class="btn btn-light action-button" type="submit" style="background-color: rgb(244,71,107);font-family: Bitter, serif;" onclick="signOut()">Logout</button></div>
+        </div>
+        </nav>
+
+        <div class="container" style="height: 101px;"></div>
+        <div class="container">
+            <h1 class="text-center" style="font-family: Bitter, serif;color: rgb(247,247,247);">- Choose your audio and let the show begin -&nbsp;</h1>
+            <p class="text-center" style="font-family: Bitter, serif; font-size: medium">Supported file formats: MP3, MP4, AAC & FLAC</p>
+            <form action="/trans/{{tenant}}_{{multiUser}}_{{user}}" method="POST" enctype="multipart/form-data">
+            <div class="form-group files color"> <input type="file" multiple="" name="files" id="files" style="background-color: rgba(42,42,42,0.39);color: rgb(255,255,255);padding-top: 27px;height: 182px;padding-left: 383px;padding-bottom: 87px;"></div>
+            <div class="container text-center" style="height: 50px;"><button class="btn btn-primary" type="submit" style="background-color: rgb(244,71,107);font-family: Bitter, serif;font-size: 21px;font-style: normal;font-weight: bold;opacity: 1;filter: blur(0px);">Start your transcription</button></div>
+            </form>
+        </div>
+            <p class="text-center" style="font-family: Bitter, serif; font-size: medium"></p>
+            <p class="text-center" style="font-family: Bitter, serif; font-size: medium">After you submit your request, please be patient for the transcription to load.</p>
+            <p class="text-center" style="font-family: Bitter, serif; font-size: medium">You will be automatically redirected once your jobs has been completed.</p>
+        </div>
+
+    </div>
+    <div class="footer-dark" style="font-family: Bitter, serif;">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3 style="font-family: Bitter, serif;">Services</h3>
+                        <ul style="font-family: Bitter, serif;">
+                            <li><a href="/services"style="font-family: Bitter, serif;">Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3 style="font-family: Bitter, serif;">About</h3>
+                        <ul style="font-family: Bitter, serif;">
+                            <li><a href="/aboutUs"  style="font-family: Bitter, serif;">Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3 style="font-family: Bitter, serif;">Transcriptor&nbsp;</h3>
+                        <p style="font-family: Bitter, serif;">How a student would transcribe</p>
+                    </div>
+                </div>
+                <p class="copyright" style="font-family: Bitter, serif;"><i class="fas fa-assistive-listening-systems" style="color: #f4476b;font-size: 25px;"></i> Transcriptor © 2020</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/js/jquery.min.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/js/Bootstrap-4---Payment-Form.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/js/Drag-and-Drop-Multiple-File-Form-Input-upload-Advanced.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/aws-cognito-sdk.min.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/amazon-cognito-identity.min.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/app.js"></script>
+    <script>
+            $(window).ready(setWelcome);
+    </script>
+</body>
+
+</html>

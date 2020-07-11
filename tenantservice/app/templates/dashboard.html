@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Transcriptor</title>
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/googleapis.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Dashboard-layout.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/dh-row-text-image-right-responsive.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Drag-and-Drop-Multiple-File-Form-Input-upload-Advanced.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Drag-Drop-File-Input-Upload.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Footer-Dark.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Header-Dark.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Service-Box-Style-01.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/styles.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Team-Clean.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/User-Information-Panel---Lite--Secondary-User-Panel-Footer.css">
+</head>
+
+<body onload="userCheck()"; >
+    <div>
+        <div class="header-dark" style="background-image: url(https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/img/mountain_bg.jpg)";>
+            <nav class="navbar navbar-dark navbar-expand-lg navigation-clean-search" style="font-family: Bitter, serif;">
+                <div class="container"><a class="navbar-brand" href="{{ url_for('welcome') }}" style="font-family: Bitter, serif;"><i class="fas fa-assistive-listening-systems" style="color: #f4476b;font-size: 25px;"></i> Transcriptor</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div
+                        class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="{{ url_for('aboutusloggedin') }}"style="font-family: Bitter, serif;">About Us</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="{{ url_for('serviceloggedin') }}"style="font-family: Bitter, serif;">Services</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" onclick="ToDashboard()" style="font-family: Bitter, serif;">Dashboard</a></li>
+                        </ul>
+                        <form class="form-inline mr-auto" target="_self">
+                            <div class="form-group"></div>
+                        </form><span class="navbar-text"></span><span class="navbar-text"><a style="font-family: Bitter, serif;">Hello&nbsp;</a><span id="username"></span><button class="btn btn-light action-button" type="submit" style="background-color: rgb(244,71,107);font-family: Bitter, serif;" onclick="signOut()">Logout</button></div>
+        </div>
+        </nav>
+        <div class="container" style="height: 101px;"></div>
+        <div class="container">
+            <h1 class="text-center" style="font-family: Bitter, serif;color: rgb(247,247,247);">- Your Dashboard -&nbsp;<br><a class="btn btn-primary text-center border rounded" role="button" style="font-size: 19px;font-family: Bitter, serif, bolt;background-color: rgb(244,71,107);" href="/trans/{{ tenant }}_{{ multiUser }}_{{ user }}">Start a new transcription</a></h1>
+        </div>
+        <div class="container" style="height: 50px;"></div>
+        <div class="container" style="font-family: Bitter, serif;">
+            <h1 class="text-center" style="font-family: Bitter, serif;color: rgb(247,247,247);">- You already transcribed -&nbsp;</h1>
+            <div class="table-responsive" style="background-color: rgba(42,42,42,0.39);color: rgb(255,255,255);">
+                {% if files|length < 1 %}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="color: rgb(255,255,255);">Start a transcription to fill up your dashboard</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: rgb(255,255,255);font-family: Bitter, serif;">No files available</td>
+                        </tr>
+                    </tbody>
+                </table>
+                {% else %}
+                    <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="color: rgb(255,255,255);">Find your files below</th>
+                            <th class="text-right" style="color: rgb(255,255,255);width: 200px;">take an acation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for file in files %}
+                        <tr>
+                            <td style="color: rgb(255,255,255);font-family: Bitter, serif;">{{ file['file'] }}</td>
+                            <td class="text-right" style="font-family: Bitter, serif;color: rgb(255,255,255);"><a class="btn btn-light action-button" role="button" href="/delete/{{ tenant }}_{{ multiUser }}_{{ user }}_{{ file['file'] }}" style="background-color: rgb(244,71,107);"><i class="fa fa-close"></i></a>&nbsp;<a class="btn btn-light action-button" href="/download/{{ user }}/{{ file['file'] }}" type="submit" style="background-color: rgb(244,71,107);"><i class="fa fa-download"></i></a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+            </div>
+        </div>
+        <div class="container" style="font-family: Bitter, serif;">
+            <h1 class="text-center" style="font-family: Bitter, serif;color: rgb(247,247,247);">-You have already used our service-&nbsp;</h1>
+            <div class="table-responsive" style="background-color: rgba(42,42,42,0.39);color: rgb(255,255,255);">
+                {% if length == 0 %}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="color: rgb(255,255,255);">Unfortunately you didn't used our service :( </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: rgb(255,255,255);font-family: Bitter, serif;">No information available</td>
+                        </tr>
+                    </tbody>
+                </table>
+                {% else %}
+                    <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="color: rgb(255,255,255);">Yes, you used our service! Your usage during the period {{ cur_per }} </th>
+                            <th style="color: rgb(255,255,255);"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="color: rgb(255,255,255);font-family: Bitter, serif;">Total number of transcriptions: {{ count }}</td></tr>
+                        <tr><td style="color: rgb(255,255,255);font-family: Bitter, serif;">Total length of transcriptions: {{ length }} sec</td></tr>
+                        <tr><td style="color: rgb(255,255,255);font-family: Bitter, serif;">Your level for the current period: {{ level }}</td></tr>
+                        <tr><th style="color: rgb(255,255,255);font-family: Bitter, serif;">Total amount: {{ charge }} €</th></tr>
+                    </tbody>
+                </table>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer-dark" style="font-family: Bitter, serif;">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3 style="font-family: Bitter, serif;">Services</h3>
+                        <ul style="font-family: Bitter, serif;">
+                            <li><a href="{{ url_for('serviceloggedin') }}"style="font-family: Bitter, serif;">Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3 style="font-family: Bitter, serif;">About</h3>
+                        <ul style="font-family: Bitter, serif;">
+                            <li><a href="{{ url_for('aboutusloggedin') }}"  style="font-family: Bitter, serif;">Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3 style="font-family: Bitter, serif;">Transcriptor&nbsp;</h3>
+                        <p style="font-family: Bitter, serif;">How a student would transcribe</p>
+                    </div>
+                </div>
+                <p class="copyright" style="font-family: Bitter, serif;"><i class="fas fa-assistive-listening-systems" style="color: #f4476b;font-size: 25px;"></i> Transcriptor © 2020</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/js/jquery.min.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/js/Bootstrap-4---Payment-Form.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/js/Drag-and-Drop-Multiple-File-Form-Input-upload-Advanced.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/aws-cognito-sdk.min.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/amazon-cognito-identity.min.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/app.js"></script>
+    <script>
+            $(window).ready(dashboard);
+    </script>
+</body>
+
+</html>

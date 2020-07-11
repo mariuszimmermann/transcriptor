@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Transcriptor</title>
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/googleapis.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Dashboard-layout.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/dh-row-text-image-right-responsive.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Drag-and-Drop-Multiple-File-Form-Input-upload-Advanced.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Drag-Drop-File-Input-Upload.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Footer-Dark.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Header-Dark.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Service-Box-Style-01.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/styles.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/Team-Clean.css">
+    <link rel="stylesheet" href="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/css/User-Information-Panel---Lite--Secondary-User-Panel-Footer.css">
+</head>
+
+<body>
+    <div>
+        <div class="header-dark" style="background-image: url(https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/img/mountain_bg.jpg)";>
+            <nav class="navbar navbar-dark navbar-expand-lg navigation-clean-search" style="font-family: Bitter, serif;">
+                <div class="container"><a class="navbar-brand" href="{{ url_for('welcome') }}" style="font-family: Bitter, serif;"><i class="fas fa-assistive-listening-systems" style="color: #f4476b;font-size: 25px;"></i> Transcriptor</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="{{ url_for('aboutusloggedin') }}"style="font-family: Bitter, serif;">About Us</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="{{ url_for('serviceloggedin') }}" style="font-family: Bitter, serif;">Services</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" onclick="ToDashboard()" style="font-family: Bitter, serif;">Dashboard</a></li>
+                        </ul>
+                        <form class="form-inline mr-auto" target="_self">
+                        <div class="form-group"></div>
+                        </form><span class="navbar-text"></span><span class="navbar-text"><a style="font-family: Bitter, serif;">Hello&nbsp;</a><span id="username"></span><button class="btn btn-light action-button" type="submit" style="background-color: rgb(244,71,107);font-family: Bitter, serif;" onclick="signOut()">Logout</button></div>
+        </div>
+        </nav>
+        <div class="container" style="height: 101px;"></div>
+        <div class="container">
+            <h1 class="text-center" style="font-family: Bitter, serif;color: rgb(247,247,247);">We are glad that you are back</h1>
+            <div class="row clearmargin clearpadding row-image-txt" style="color: rgb(80,94,108);height: 428px;background-color: rgba(42,42,42,0.39);">
+                <div class="col-xs-12 col-sm-6 col-md-6 clearmargin clearpadding col-sm-push-6" style="background-image: url(https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/img/meeting.jpg);background-size: cover;height: 402px;background-position: center;color: rgba(80,94,108,0);margin: 0px;margin-top: 13px;padding: 0;font-size: 7px;padding-top: 1px;">
+                    <div></div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-sm-pull-6" style="padding:20px;">
+                    <hr style="background-color: white;">
+                    <p style="font-size: 15px;font-family: Bitter, serif;">Ready for some new transcriptions...go to your dashboard</p>
+                    <div style="text-align:center"><a class="btn btn-light btn-lg" role="button" onclick="ToDashboard()"  style="font-family: Bitter, serif;">Dashboard</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer-dark" style="font-family: Bitter, serif;">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3 style="font-family: Bitter, serif;">Services</h3>
+                        <ul style="font-family: Bitter, serif;">
+                            <li><a href="{{ url_for('serviceloggedin') }}"style="font-family: Bitter, serif;">Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3 style="font-family: Bitter, serif;">About</h3>
+                        <ul style="font-family: Bitter, serif;">
+                            <li><a href="{{ url_for('aboutusloggedin') }}"  style="font-family: Bitter, serif;">Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3 style="font-family: Bitter, serif;">Transcriptor&nbsp;</h3>
+                        <p style="font-family: Bitter, serif;">How a student would transcribe</p>
+                    </div>
+                </div>
+                <p class="copyright" style="font-family: Bitter, serif;"><i class="fas fa-assistive-listening-systems" style="color: #f4476b;font-size: 25px;"></i> Transcriptor © 2020</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/js/jquery.min.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/js/Bootstrap-4---Payment-Form.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/js/Drag-and-Drop-Multiple-File-Form-Input-upload-Advanced.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/aws-cognito-sdk.min.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/amazon-cognito-identity.min.js"></script>
+    <script src="https://transcribewebsitebzs.s3.us-east-2.amazonaws.com/static/app.js"></script>
+    <script>
+            $(window).ready(setWelcome);
+    </script>
+</body>
+
+</html>
+

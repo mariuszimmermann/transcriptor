@@ -1,0 +1,26 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: tenantservice
+spec:
+  replicas: 1 #This number has been chosen due to the increased cost that comes with more replicas. We are aware of this functionality
+  selector:
+    matchLabels:
+      app: tenantservice
+  template:
+    metadata:
+      labels:
+        app: tenantservice
+    spec:
+      containers:
+        - name: tenantservice
+          image: leonsick/transcribe_by_bzs:tenantservice
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3002
+          env:
+            - name: AWS_ACCESS_KEY_ID
+              value: 'AWS KEY'
+            - name: AWS_SECRET_ACCESS_KEY
+              value: 'AWS KEY'

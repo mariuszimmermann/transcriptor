@@ -1,0 +1,128 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-web-tenantservice-transcribe
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=1800
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            backend:
+              serviceName: web
+              servicePort: 3000
+
+          - path: /services
+            backend:
+              servicePort: 3000
+              serviceName: web
+
+          - path: /ueber-uns
+            backend:
+              servicePort: 3000
+              serviceName: web
+
+          - path: /aboutUs
+            backend:
+              servicePort: 3000
+              serviceName: web
+
+          - path: /login
+            backend:
+              serviceName: web
+              servicePort: 3000
+
+          - path: /validate
+            backend:
+              serviceName: web
+              servicePort: 3000
+
+          - path: /logout
+            backend:
+              serviceName: web
+              servicePort: 3000
+
+          - path: /register
+            backend:
+              serviceName: web
+              servicePort: 3000
+
+          - path: /dashboard/*
+            backend:
+              serviceName: tenantservice
+              servicePort: 3002
+
+          - path: /delete/*
+            backend:
+              serviceName: tenantservice
+              servicePort: 3002
+
+          - path: /download/*
+            backend:
+              serviceName: tenantservice
+              servicePort: 3002
+
+          - path: /createfolder
+            backend:
+              serviceName: tenantservice
+              servicePort: 3002
+
+          - path: /welcome
+            backend:
+              serviceName: tenantservice
+              servicePort: 3002
+
+          - path: /serviceloggedin
+            backend:
+              serviceName: tenantservice
+              servicePort: 3002
+
+          - path: /aboutusloggedin
+            backend:
+              serviceName: tenantservice
+              servicePort: 3002
+
+          - path: /dashboardAdmin/*
+            backend:
+                serviceName: tenantservice
+                servicePort: 3002
+
+          - path: /dashboardAdmin
+            backend:
+              serviceName: tenantservice
+              servicePort: 3002
+
+          - path: /dashboardTenant/*
+            backend:
+                serviceName: tenantservice
+                servicePort: 3002
+
+          - path: /transcribe/*
+            backend:
+              serviceName: transcribe
+              servicePort: 3001
+
+          - path: /transrun
+            backend:
+              serviceName: transcribe
+              servicePort: 3001
+
+          - path: /transcribehandler/*
+            backend:
+              serviceName: transcribe
+              servicePort: 3001
+
+          - path: /trans/*
+            backend:
+              serviceName: transcribe
+              servicePort: 3001
+
+          - path: /registernewt
+            backend:
+              serviceName: web
+              servicePort: 3000
+
+

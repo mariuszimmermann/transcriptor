@@ -1,0 +1,26 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: web
+spec:
+  replicas: 1 #This number has been chosen due to the increased cost that comes with more replicas. We are aware of this functionality
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web
+          image: leonsick/transcribe_by_bzs:web
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+          env:
+            - name: AWS_ACCESS_KEY_ID
+              value: 'AWS KEY'
+            - name: AWS_SECRET_ACCESS_KEY
+              value: 'AWS KEY'
