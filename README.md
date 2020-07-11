@@ -4,14 +4,14 @@ Besides the transcription services, our application offers some other nice featu
 That leads me to a second highlight of our application. We implemented an automatic billing system. Our billing system is based on the user’s usage. If they transcribe more, they reach automatically another level of membership. These different levels lead to different prices, which will be explained in detail at section four “Business Model” of this documentary. Furthermore, we distinguish between private members and business members. For our business members we have some special billing terms. 
 
 
-•	Microservice 1: Web
+•	Microservice 1 Web
 The Web microservice is responsible for handling the frontend and backend services for all app functionalities that do not require a login. That includes the overview pages that display information about the service, such as the home page, services and about us. The service also houses the registration and login process. It is composed of various HTML, CSS and other style files as well as a JavaScript and Python file for handling all logic components. The Python script is making use of Flask for frontend handling, the JavaScript file is simply for logic handling. The service is running on port 3000 inside the Kubernetes cluster.
 
-•	Microservice 2: Tenantservice
+•	Microservice 2 Tenantservice
 The second microservice is used to handle all services in a logged-in state that do not require additional advanced functionality, i.e. not the transcription handling. This service powers the individual user dashboard as well as the billing or usage control dashboard. Also, it displays all other pages in a logged-in state. Just like the Web microservice, the Tenantservice is responsible for handling all frontend and backend functionalities that meet its criteria, so naturally, it includes HTML, CSS and other frontend-relevant files as well as a Python script powered by Flask and a JavaScript file, mainly for handling the tenancy services, e.g. logging in and logging out. The Tenantservice has port 3002 assigned inside the cluster.
 
-•	Microservice 3: Transcribe
+•	Microservice 3 Transcribe
 All functionalities required for the transcription of audio files is housed inside the Transcribe microservice. This allows the service to handle the upload of an audio file, the transcription with AWS Transcribe and the saving of the transcript in a .txt file, which is upload into the user’s S3 folder. The service includes a Flask-driven Python Script as well as a Javascript file. Both are controlling the backend of the service. Multiple frontend files, just like in the other two microservices, are also included. Transcribe is running on port 3001 inside the Kubernetes cluster.
 
-•	Kubernetes Ingress Controller
+•	Kubernetes Ingress Controller:
 The application uses a Kubernetes ingress controller to route all traffic coming into the correct services. The ingress is based on a single .yaml file that connects to the three different microservices on ports 3000 (Web), 3001 (Transcribe), 3002 (Tenantservice). The Ingress is running on port 80.
